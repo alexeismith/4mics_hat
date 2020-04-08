@@ -23,6 +23,8 @@ def main():
     src.link(ch1)
     ch1.link(kws)
     src.link(doa)
+    
+    pixels.think()
 
     def on_detected(keyword):
         position = doa.get_direction()

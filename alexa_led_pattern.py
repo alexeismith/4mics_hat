@@ -35,8 +35,10 @@ class AlexaLedPattern(object):
     def wakeup(self, direction=0):
         position = int((direction + 15) / (360 / self.pixels_number)) % self.pixels_number
 
-        pixels = [0, 0, 0, 24] * self.pixels_number
-        pixels[position * 4 + 2] = 48
+        pixels = [0, 4, 4, 4] * self.pixels_number
+        pixels[position * 4 + 1] = 36
+        pixels[position * 4 + 2] = 12
+        pixels[position * 4 + 3] = 0
 
         self.show(pixels)
 
@@ -46,7 +48,7 @@ class AlexaLedPattern(object):
         self.show(pixels)
 
     def think(self):
-        pixels  = [0, 0, 12, 12, 0, 0, 0, 24] * self.pixels_number
+        pixels  = [0, 18, 6, 0, 0, 4, 4, 4] * self.pixels_number
 
         while not self.stop:
             self.show(pixels)
